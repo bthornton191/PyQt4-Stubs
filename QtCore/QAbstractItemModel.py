@@ -7,11 +7,31 @@
 # imports
 import sip as __sip
 
-
 from QObject import QObject
+
 
 class QAbstractItemModel(QObject):
     """ QAbstractItemModel(QObject parent=None) """
+
+    columnsAboutToBeInserted = pyqtSignal(QModelIndex, int, int)
+    """ :type: pyqtSignal[QModelIndex parent, int start, int end]"""
+    columnsAboutToBemoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)
+    columnsInserted = pyqtSignal(QModelIndex, int, int)
+    columnsMoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)
+    columnsRemoved = pyqtSignal(QModelIndex, int, int)
+    dataChanged = pyqtSignal(QModelIndex, QModelIndex)
+    """ :type: pyqtSignal[QModelIndex topLeft, QModelIndex bottomRight]"""
+    headerDataChanged = pyqtSignal(Qt.Orientation, int, int)
+    layoutAboutToBeChanged = pyqtSignal()
+    layoutChanged = pyqtSignal()
+    modelAboutToBeReset = pyqtSignal()
+    modelReset = pyqtSignal()
+    rowsAboutToBeInserted = pyqtSignal(QModelIndex, int, int)
+    rowsAboutToBeMoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)
+    rowsInserted = pyqtSignal(QModelIndex, int, int)
+    rowsMoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)
+    rowsRemoved = pyqtSignal(QModelIndex, int, int)
+
     def beginInsertColumns(self, QModelIndex, p_int, p_int_1): # real signature unknown; restored from __doc__
         """ QAbstractItemModel.beginInsertColumns(QModelIndex, int, int) """
         pass
@@ -63,30 +83,6 @@ class QAbstractItemModel(QObject):
         """ QAbstractItemModel.columnCount(QModelIndex parent=QModelIndex()) -> int """
         pass
 
-    def columnsAboutToBeInserted(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsAboutToBeInserted[QModelIndex, int, int] [signal] """
-        pass
-
-    def columnsAboutToBeMoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsAboutToBeMoved[QModelIndex, int, int, QModelIndex, int] [signal] """
-        pass
-
-    def columnsAboutToBeRemoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsAboutToBeRemoved[QModelIndex, int, int] [signal] """
-        pass
-
-    def columnsInserted(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsInserted[QModelIndex, int, int] [signal] """
-        pass
-
-    def columnsMoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsMoved[QModelIndex, int, int, QModelIndex, int] [signal] """
-        pass
-
-    def columnsRemoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.columnsRemoved[QModelIndex, int, int] [signal] """
-        pass
-
     def connectNotify(self, *args, **kwargs): # real signature unknown
         pass
 
@@ -100,15 +96,6 @@ class QAbstractItemModel(QObject):
     def data(self, QModelIndex, int_role=None): # real signature unknown; restored from __doc__
         """ QAbstractItemModel.data(QModelIndex, int role=Qt.DisplayRole) -> QVariant """
         return QVariant
-
-    class dataChanged(pyqtSignal):
-        def emit(self, *args, **kwargs):
-            """ QAbstractItemModel.dataChanged[QModelIndex, QModelIndex] [signal] """
-            pass
-
-    # def dataChanged(self, *args, **kwargs): # real signature unknown
-    #     """ QAbstractItemModel.dataChanged[QModelIndex, QModelIndex] [signal] """
-    #     pass
 
     def decodeData(self, p_int, p_int_1, QModelIndex, QDataStream): # real signature unknown; restored from __doc__
         """ QAbstractItemModel.decodeData(int, int, QModelIndex, QDataStream) -> bool """
@@ -173,10 +160,6 @@ class QAbstractItemModel(QObject):
         """ QAbstractItemModel.headerData(int, Qt.Orientation, int role=Qt.DisplayRole) -> QVariant """
         return QVariant
 
-    def headerDataChanged(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.headerDataChanged[Qt.Orientation, int, int] [signal] """
-        pass
-
     def index(self, p_int, p_int_1, QModelIndex_parent=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QAbstractItemModel.index(int, int, QModelIndex parent=QModelIndex()) -> QModelIndex """
         pass
@@ -201,14 +184,6 @@ class QAbstractItemModel(QObject):
         """ QAbstractItemModel.itemData(QModelIndex) -> dict-of-int-QVariant """
         pass
 
-    def layoutAboutToBeChanged(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.layoutAboutToBeChanged [signal] """
-        pass
-
-    def layoutChanged(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.layoutChanged [signal] """
-        pass
-
     def match(self, QModelIndex, p_int, QVariant, int_hits=1, Qt_MatchFlags_flags=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QAbstractItemModel.match(QModelIndex, int, QVariant, int hits=1, Qt.MatchFlags flags=Qt.MatchStartsWith|Qt.MatchWrap) -> list-of-QModelIndex """
         pass
@@ -220,14 +195,6 @@ class QAbstractItemModel(QObject):
     def mimeTypes(self): # real signature unknown; restored from __doc__
         """ QAbstractItemModel.mimeTypes() -> QStringList """
         return QStringList
-
-    def modelAboutToBeReset(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.modelAboutToBeReset [signal] """
-        pass
-
-    def modelReset(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.modelReset [signal] """
-        pass
 
     def parent(self, QModelIndex=None): # real signature unknown; restored from __doc__ with multiple overloads
         """
@@ -277,30 +244,6 @@ class QAbstractItemModel(QObject):
 
     def rowCount(self, QModelIndex_parent=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QAbstractItemModel.rowCount(QModelIndex parent=QModelIndex()) -> int """
-        pass
-
-    def rowsAboutToBeInserted(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsAboutToBeInserted[QModelIndex, int, int] [signal] """
-        pass
-
-    def rowsAboutToBeMoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsAboutToBeMoved[QModelIndex, int, int, QModelIndex, int] [signal] """
-        pass
-
-    def rowsAboutToBeRemoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsAboutToBeRemoved[QModelIndex, int, int] [signal] """
-        pass
-
-    def rowsInserted(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsInserted[QModelIndex, int, int] [signal] """
-        pass
-
-    def rowsMoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsMoved[QModelIndex, int, int, QModelIndex, int] [signal] """
-        pass
-
-    def rowsRemoved(self, *args, **kwargs): # real signature unknown
-        """ QAbstractItemModel.rowsRemoved[QModelIndex, int, int] [signal] """
         pass
 
     def sender(self, *args, **kwargs): # real signature unknown
