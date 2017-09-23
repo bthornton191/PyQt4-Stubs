@@ -15,7 +15,8 @@ class QDesktopWidget(QWidget):
     def actionEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def availableGeometry(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def availableGeometry(*__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QDesktopWidget.availableGeometry(int screen=-1) -> QRect
         QDesktopWidget.availableGeometry(QWidget) -> QRect

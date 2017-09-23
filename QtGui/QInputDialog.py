@@ -120,26 +120,31 @@ class QInputDialog(QDialog):
     def fontChange(self, *args, **kwargs): # real signature unknown
         pass
 
-    def getDouble(self, QWidget, QString, QString_1, float_value=0, float_min=-2147483647, float_max=2147483647, int_decimals=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
+    @staticmethod
+    def getDouble(QWidget, QString, QString_1, float_value=0, float_min=-2147483647, float_max=2147483647, int_decimals=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
         """ QInputDialog.getDouble(QWidget, QString, QString, float value=0, float min=-2147483647, float max=2147483647, int decimals=1, Qt.WindowFlags flags=0) -> (float, bool) """
         pass
 
-    def getInt(self, QWidget, QString, QString_1, int_value=0, int_min=-2147483647, int_max=2147483647, int_step=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
+    @staticmethod
+    def getInt(QWidget, QString, QString_1, int_value=0, int_min=-2147483647, int_max=2147483647, int_step=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
         """ QInputDialog.getInt(QWidget, QString, QString, int value=0, int min=-2147483647, int max=2147483647, int step=1, Qt.WindowFlags flags=0) -> (int, bool) """
         pass
 
-    def getInteger(self, QWidget, QString, QString_1, int_value=0, int_min=-2147483647, int_max=2147483647, int_step=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
+    @staticmethod
+    def getInteger(QWidget, QString, QString_1, int_value=0, int_min=-2147483647, int_max=2147483647, int_step=1, Qt_WindowFlags_flags=0): # real signature unknown; restored from __doc__
         """ QInputDialog.getInteger(QWidget, QString, QString, int value=0, int min=-2147483647, int max=2147483647, int step=1, Qt.WindowFlags flags=0) -> (int, bool) """
         pass
 
-    def getItem(self, QWidget, QString, QString_1, QStringList, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def getItem(QWidget, QString, QString_1, QStringList, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QInputDialog.getItem(QWidget, QString, QString, QStringList, int current=0, bool editable=True, Qt.WindowFlags flags=0) -> (QString, bool)
         QInputDialog.getItem(QWidget, QString, QString, QStringList, int, bool, Qt.WindowFlags, Qt.InputMethodHints) -> (QString, bool)
         """
         pass
 
-    def getText(self, QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def getText(QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QInputDialog.getText(QWidget, QString, QString, QLineEdit.EchoMode mode=QLineEdit.Normal, QString text=QString(), Qt.WindowFlags flags=0) -> (QString, bool)
         QInputDialog.getText(QWidget, QString, QString, QLineEdit.EchoMode, QString, Qt.WindowFlags, Qt.InputMethodHints) -> (QString, bool)

@@ -36,7 +36,8 @@ class QDateTime(): # skipped bases: <type 'sip.simplewrapper'>
         """ QDateTime.addYears(int) -> QDateTime """
         return QDateTime
 
-    def currentDateTime(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def currentDateTime(): # real signature unknown; restored from __doc__
         """ QDateTime.currentDateTime() -> QDateTime """
         return QDateTime
 

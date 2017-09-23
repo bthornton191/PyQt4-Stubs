@@ -13,7 +13,9 @@ class QStyleFactory(): # skipped bases: <type 'sip.simplewrapper'>
     QStyleFactory()
     QStyleFactory(QStyleFactory)
     """
-    def create(self, QString): # real signature unknown; restored from __doc__
+
+    @staticmethod
+    def create(QString): # real signature unknown; restored from __doc__
         """ QStyleFactory.create(QString) -> QStyle """
         return QStyle
 

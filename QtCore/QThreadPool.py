@@ -65,7 +65,8 @@ class QThreadPool(QObject):
         """ QThreadPool.setMaxThreadCount(int) """
         pass
 
-    def start(self, QRunnable, int_priority=0): # real signature unknown; restored from __doc__
+    @staticmethod
+    def start(QRunnable, int_priority=0): # real signature unknown; restored from __doc__
         """ QThreadPool.start(QRunnable, int priority=0) """
         pass
 

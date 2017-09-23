@@ -16,11 +16,12 @@ class QMessageBox(QDialog):
     QMessageBox(QMessageBox.Icon, QString, QString, QMessageBox.StandardButtons buttons=QMessageBox.NoButton, QWidget parent=None, Qt.WindowFlags flags=Qt.Dialog|Qt.MSWindowsFixedSizeDialogHint)
     QMessageBox(QString, QString, QMessageBox.Icon, int, int, int, QWidget parent=None, Qt.WindowFlags flags=Qt.Dialog|Qt.MSWindowsFixedSizeDialogHint)
     """
-    def about(self, QWidget, QString, QString_1): # real signature unknown; restored from __doc__
+    @staticmethod
+    def about(QWidget, QString, QString_1): # real signature unknown; restored from __doc__
         """ QMessageBox.about(QWidget, QString, QString) """
         pass
 
-    def aboutQt(self, QWidget, QString_title=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def aboutQt(self, QWidget, QString_title=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QMessageBox.aboutQt(QWidget, QString title=QString()) """
         pass
 
@@ -79,7 +80,8 @@ class QMessageBox(QDialog):
     def create(self, *args, **kwargs): # real signature unknown
         pass
 
-    def critical(self, QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def critical(QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QMessageBox.critical(QWidget, QString, QString, QMessageBox.StandardButtons buttons=QMessageBox.Ok, QMessageBox.StandardButton defaultButton=QMessageBox.NoButton) -> QMessageBox.StandardButton
         QMessageBox.critical(QWidget, QString, QString, int, int, int button2=0) -> int
@@ -162,7 +164,8 @@ class QMessageBox(QDialog):
         """ QMessageBox.iconPixmap() -> QPixmap """
         return QPixmap
 
-    def information(self, QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def information(QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QMessageBox.information(QWidget, QString, QString, QMessageBox.StandardButtons buttons=QMessageBox.Ok, QMessageBox.StandardButton defaultButton=QMessageBox.NoButton) -> QMessageBox.StandardButton
         QMessageBox.information(QWidget, QString, QString, int, int button1=0, int button2=0) -> int
@@ -341,7 +344,8 @@ class QMessageBox(QDialog):
     def updateMicroFocus(self, *args, **kwargs): # real signature unknown
         pass
 
-    def warning(self, QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def warning(QWidget, QString, QString_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QMessageBox.warning(QWidget, QString, QString, QMessageBox.StandardButtons buttons=QMessageBox.Ok, QMessageBox.StandardButton defaultButton=QMessageBox.NoButton) -> QMessageBox.StandardButton
         QMessageBox.warning(QWidget, QString, QString, int, int, int button2=0) -> int

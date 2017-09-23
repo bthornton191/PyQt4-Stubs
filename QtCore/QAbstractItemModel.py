@@ -15,6 +15,7 @@ class QAbstractItemModel(QObject):
 
     columnsAboutToBeInserted = pyqtSignal(QModelIndex, int, int)
     """ :type: pyqtSignal[QModelIndex parent, int start, int end]"""
+
     columnsAboutToBemoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)
     columnsInserted = pyqtSignal(QModelIndex, int, int)
     columnsMoved = pyqtSignal(QModelIndex, int, int, QModelIndex, int)

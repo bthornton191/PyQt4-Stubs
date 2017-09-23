@@ -92,7 +92,8 @@ class QCoreApplication(QObject):
         """ QCoreApplication.installTranslator(QTranslator) """
         pass
 
-    def instance(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def instance(): # real signature unknown; restored from __doc__
         """ QCoreApplication.instance() -> QCoreApplication """
         return QCoreApplication
 
@@ -119,7 +120,8 @@ class QCoreApplication(QObject):
         """
         pass
 
-    def processEvents(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def processEvents(*__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QCoreApplication.processEvents(QEventLoop.ProcessEventsFlags flags=QEventLoop.AllEvents)
         QCoreApplication.processEvents(QEventLoop.ProcessEventsFlags, int)
@@ -189,7 +191,8 @@ class QCoreApplication(QObject):
         """ QCoreApplication.setOrganizationName(QString) """
         pass
 
-    def startingUp(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def startingUp(): # real signature unknown; restored from __doc__
         """ QCoreApplication.startingUp() -> bool """
         return False
 
@@ -200,7 +203,8 @@ class QCoreApplication(QObject):
     def timerEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def translate(self, p_str, p_str_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def translate(p_str, p_str_1, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QCoreApplication.translate(str, str, str disambiguation=None, QCoreApplication.Encoding encoding=QCoreApplication.CodecForTr) -> QString
         QCoreApplication.translate(str, str, str, QCoreApplication.Encoding, int) -> QString

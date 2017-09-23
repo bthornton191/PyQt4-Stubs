@@ -107,7 +107,8 @@ class QDir(): # skipped bases: <type 'sip.simplewrapper'>
         """ QDir.home() -> QDir """
         return QDir
 
-    def homePath(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def homePath(): # real signature unknown; restored from __doc__
         """ QDir.homePath() -> QString """
         return QString
 

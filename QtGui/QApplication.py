@@ -53,7 +53,8 @@ class QApplication(__PyQt4_QtCore.QCoreApplication):
     def childEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def clipboard(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def clipboard(): # real signature unknown; restored from __doc__
         """ QApplication.clipboard() -> QClipboard """
         return QClipboard
 
@@ -83,7 +84,8 @@ class QApplication(__PyQt4_QtCore.QCoreApplication):
     def customEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def desktop(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def desktop(): # real signature unknown; restored from __doc__
         """ QApplication.desktop() -> QDesktopWidget """
         return QDesktopWidget
 
@@ -291,7 +293,8 @@ class QApplication(__PyQt4_QtCore.QCoreApplication):
         """ QApplication.setOverrideCursor(QCursor) """
         pass
 
-    def setPalette(self, QPalette, str_className=None): # real signature unknown; restored from __doc__
+    @staticmethod
+    def setPalette(QPalette, str_className=None): # real signature unknown; restored from __doc__
         """ QApplication.setPalette(QPalette, str className=None) """
         pass
 
@@ -334,7 +337,8 @@ class QApplication(__PyQt4_QtCore.QCoreApplication):
         """ QApplication.startDragTime() -> int """
         return 0
 
-    def style(self): # real signature unknown; restored from __doc__
+    @staticmethod
+    def style(): # real signature unknown; restored from __doc__
         """ QApplication.style() -> QStyle """
         return QStyle
 

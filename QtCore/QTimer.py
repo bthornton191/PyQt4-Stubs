@@ -53,7 +53,8 @@ class QTimer(QObject):
         """ QTimer.setSingleShot(bool) """
         pass
 
-    def singleShot(self, p_int, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    @staticmethod
+    def singleShot(p_int, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QTimer.singleShot(int, QObject, SLOT())
         QTimer.singleShot(int, callable)

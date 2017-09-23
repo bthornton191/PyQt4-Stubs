@@ -60,19 +60,23 @@ class QByteArray(): # skipped bases: <type 'sip.simplewrapper'>
         """ QByteArray.fill(str, int size=-1) -> QByteArray """
         return QByteArray
 
-    def fromBase64(self, QByteArray): # real signature unknown; restored from __doc__
+    @staticmethod
+    def fromBase64(QByteArray): # real signature unknown; restored from __doc__
         """ QByteArray.fromBase64(QByteArray) -> QByteArray """
         return QByteArray
 
-    def fromHex(self, QByteArray): # real signature unknown; restored from __doc__
+    @staticmethod
+    def fromHex(QByteArray): # real signature unknown; restored from __doc__
         """ QByteArray.fromHex(QByteArray) -> QByteArray """
         return QByteArray
 
-    def fromPercentEncoding(self, QByteArray, str_percent='%'): # real signature unknown; restored from __doc__
+    @staticmethod
+    def fromPercentEncoding(QByteArray, str_percent='%'): # real signature unknown; restored from __doc__
         """ QByteArray.fromPercentEncoding(QByteArray, str percent='%') -> QByteArray """
         return QByteArray
 
-    def fromRawData(self, p_str): # real signature unknown; restored from __doc__
+    @staticmethod
+    def fromRawData(p_str): # real signature unknown; restored from __doc__
         """ QByteArray.fromRawData(str) -> QByteArray """
         return QByteArray
 
@@ -239,7 +243,7 @@ class QByteArray(): # skipped bases: <type 'sip.simplewrapper'>
         """ QByteArray.toLower() -> QByteArray """
         return QByteArray
 
-    def toPercentEncoding(self, QByteArray_exclude=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def toPercentEncoding(self, QByteArray_exclude=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QByteArray.toPercentEncoding(QByteArray exclude=QByteArray(), QByteArray include=QByteArray(), str percent='%') -> QByteArray """
         pass
 

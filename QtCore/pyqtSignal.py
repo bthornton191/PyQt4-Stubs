@@ -13,7 +13,7 @@ from object import object
 class pyqtSignal(object):
     """
     pyqtSignal(*types, name=str) -> signal
-    
+
     types is normally a sequence of individual types.  Each type is either a
     type object or a string that is the name of a C++ type.  Alternatively
     each type could itself be a sequence of types each describing a different
@@ -33,7 +33,13 @@ class pyqtSignal(object):
         """ descr.__get__(obj[, type]) -> value """
         pass
 
-    def __init__(self, *types, name=None): # real signature unknown; restored from __doc__
+    def __init__(self, name=None, *types): # real signature unknown; restored from __doc__
+        pass
+
+    def connect(self, function):
+        pass
+
+    def emit(self, *args):
         pass
 
     @staticmethod # known case of __new__

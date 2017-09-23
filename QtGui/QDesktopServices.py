@@ -17,7 +17,8 @@ class QDesktopServices(): # skipped bases: <type 'sip.simplewrapper'>
         """ QDesktopServices.displayName(QDesktopServices.StandardLocation) -> QString """
         pass
 
-    def openUrl(self, QUrl): # real signature unknown; restored from __doc__
+    @staticmethod
+    def openUrl(QUrl): # real signature unknown; restored from __doc__
         """ QDesktopServices.openUrl(QUrl) -> bool """
         return False
 
