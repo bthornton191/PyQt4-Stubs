@@ -360,7 +360,6 @@ LogicalMoveStyle = CursorMoveStyle(0)
 VisualMoveStyle = CursorMoveStyle(1)
 
 
-
 class CursorShape(QtEnumeration):
     """ This enum type defines the various cursors that can be used.
 
@@ -406,18 +405,176 @@ ForbiddenCursor = CursorShape(14)
 """ A slashed circle cursor, typically used during drag and drop operations to indicate that dragged content 
     cannot be dropped on particular widgets or inside certain regions."""
 OpenHandCursor = CursorShape(17)
-""" """
+""" A cursor representing an open hand, typically used to indicate that the area under the cursor is the visible part 
+    of a canvas that the user can click and drag in order to scroll around."""
 ClosedHandCursor = CursorShape(18)
-""" """
+""" A cursor representing a closed hand, typically used to indicate that a dragging operation is in 
+    progress that involves scrolling."""
 WhatsThisCursor = CursorShape(15)
-""" """
+""" An arrow with a question mark, typically used to indicate the presence of What's This? help for a widget."""
 BusyCursor = CursorShape(16)
-""" """
+""" An hourglass or watch cursor, usually shown during operations that allow the user to interact with the 
+    application while they are performed in the background."""
 DragMoveCursor = CursorShape(20)
-""" """
+""" A cursor that is usually used when dragging an item."""
 DragCopyCursor = CursorShape(19)
-""" """
+""" A cursor that is usually used when dragging an item to copy it."""
 DragLinkCursor = CursorShape(21)
-""" """
+""" A cursor that is usually used when dragging an item to make a link to it."""
 BitmapCursor = CursorShape(24)
-""" """
+
+
+class DateFormat(QtEnumeration): ...
+
+
+TextDate = DateFormat(0)
+""" The default Qt format, which includes the day and month name, the day number in the month, and the year in full. 
+    The day and month names will be short, localized names. This is basically equivalent to using the date format 
+    string, "ddd MMM d yyyy". See QDate::toString() for more information."""
+ISODate = DateFormat(1)
+""" ISO 8601 extended format: either YYYY-MM-DD for dates or YYYY-MM-DDTHH:mm:ss, YYYY-MM-DDTHH:mm:ssTZD 
+    (e.g., 1997-07-16T19:20:30+01:00) for combined dates and times."""
+SystemLocalShortDate = DateFormat("?")
+""" The short format used by the operating system."""
+SystemLocalLongDate = DateFormat("?")
+""" The long format used by the operating system."""
+DefaultLocalShortDate = DateFormat("?")
+""" The short format specified by the application's locale."""
+DefaultLocalLongDate = DateFormat("?")
+""" The long format used by the application's locale."""
+SystemLocaleDate = DateFormat(2)
+""" This enum value is deprecated. Use Qt::SystemLocaleShortDate instead 
+    (or Qt::SystemLocaleLongDate if you want long dates)."""
+LocaleDate = DateFormat("?")
+""" This enum value is deprecated. Use Qt::DefaultLocaleShortDate instead 
+    (or Qt::DefaultLocaleLongDate if you want long dates)."""
+LocalDate = SystemLocaleDate
+""" This enum value is deprecated. Use Qt::SystemLocaleShortDate instead 
+    (or Qt::SystemLocaleLongDate if you want long dates)."""
+
+
+class DayOfWeek(QtEnumeration): ...
+
+
+Monday = DayOfWeek(1)
+Tuesday = DayOfWeek(2)
+Wednesday = DayOfWeek(3)
+Thursday = DayOfWeek(4)
+Friday = DayOfWeek(5)
+Saturday = DayOfWeek(6)
+Sunday = DayOfWeek(7)
+
+
+class DockWidgetArea(QtEnumeration):
+    """ The DockWidgetAreas type is a typedef for QFlags<DockWidgetArea>. It stores an OR combination of
+        DockWidgetArea values.
+    """
+    ...
+
+
+LeftDockWidgetArea = DockWidgetArea(0x1)
+RightDockWidgetArea = DockWidgetArea(0x2)
+TopDockWidgetArea = DockWidgetArea(0x4)
+BottomDockWidgetArea = DockWidgetArea(0x8)
+AllDockWidgetAreas = LeftDockWidgetArea | RightDockWidgetArea | TopDockWidgetArea | BottomDockWidgetArea
+NoDockWidgetArea = DockWidgetArea(0)
+
+
+class DropAction(QtEnumeration):
+    """ The DropActions type is a typedef for QFlags<DropAction>. It stores an OR combination of DropAction values.
+    """
+    ...
+
+
+CopyAction = DropAction(0x1)
+""" Copy the data to the target."""
+MoveAction = DropAction(0x2)
+""" Move the data from the source to the target."""
+LinkAction = DropAction(0x4)
+""" Create a link from the source to the target."""
+ActionMask = DropAction(0xff)
+IgnoreAction = DropAction(0x0)
+""" Ignore the action (do nothing with the data)."""
+TargetMoveAction = DropAction(0x8002)
+""" On Windows, this value is used when the ownership of the D&D data should be taken over by the target application, 
+    i.e., the source application should not delete the data. On X11 this value is used to do a move. 
+    TargetMoveAction is not used on the Mac."""
+
+
+class EventPriority(QtEnumeration):
+    """ This enum can be used to specify event priorities.
+        Note that these values are provided purely for convenience,
+        since event priorities can be any value between INT_MAX and INT_MIN, inclusive.
+    """
+    ...
+
+
+HighEventPriority = EventPriority(1)
+NormalEventPriority = EventPriority(0)
+LowEventPriority = EventPriority(-1)
+
+
+
+class FillRule(QtEnumeration):
+    """ Specifies which method should be used to fill the paths and polygons.
+    """
+    ...
+
+
+OddEvenFill = FillRule(0)
+""" Specifies that the region is filled using the odd even fill rule. With this rule, 
+    we determine whether a point is inside the shape by using the following method. 
+    Draw a horizontal line from the point to a location outside the shape, and count the number of intersections. 
+    If the number of intersections is an odd number, the point is inside the shape. This mode is the default."""
+WindingFill = FillRule(1)
+""" Specifies that the region is filled using the non zero winding rule. With this rule, we determine whether a point 
+    is inside the shape by using the following method. Draw a horizontal line from the point to a location 
+    outside the shape. Determine whether the direction of the line at each intersection point is up or down. 
+    The winding number is determined by summing the direction of each intersection. If the number is non zero, 
+    the point is inside the shape. This fill mode can also in most cases be considered as the intersection of 
+    closed shapes."""
+
+
+class FocusPolicy(QtEnumeration):
+    """ This enum type defines the various policies a widget can have with respect to acquiring keyboard focus.
+    """
+    ...
+
+
+TabFocus = FocusPolicy(0x1)
+""" the widget accepts focus by tabbing."""
+ClickFocus = FocusPolicy(0x2)
+""" the widget accepts focus by clicking."""
+StrongFocus = TabFocus | ClickFocus | FocusPolicy(0x8)
+""" the widget accepts focus by both tabbing and clicking. On Mac OS X this will also be indicate that the 
+    widget accepts tab focus when in 'Text/List focus mode'."""
+WheelFocus = StrongFocus | FocusPolicy(0x4)
+""" like Qt::StrongFocus plus the widget accepts focus by using the mouse wheel."""
+NoFocus = FocusPolicy(0)
+""" the widget does not accept focus."""
+
+
+
+class FocusReason(QtEnumeration):
+    """ This enum specifies why the focus changed. It will be passed through QWidget::setFocus and
+        can be retrieved in the QFocusEvent sent to the widget upon focus change.
+    """
+    ...
+
+
+MouseFocusReason = FocusReason(0)
+""" A mouse action occurred."""
+TabFocusReason = FocusReason(1)
+""" The Tab key was pressed."""
+BacktabFocusReason = FocusReason(2)
+""" A Backtab occurred. The input for this may include the Shift or Control keys; e.g. Shift+Tab."""
+ActiveWindowFocusReason = FocusReason(3)
+""" The window system made this window either active or inactive."""
+PopupFocusReason = FocusReason(4)
+""" The application opened/closed a pop-up that grabbed/released the keyboard focus."""
+ShortcutFocusReason = FocusReason(5)
+""" The user typed a label's buddy shortcut"""
+MenuBarFocusReason = FocusReason(6)
+""" The menu bar took focus."""
+OtherFocusReason = FocusReason(7)
+""" Another reason, usually application-specific."""
