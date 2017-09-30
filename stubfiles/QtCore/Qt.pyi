@@ -514,7 +514,6 @@ NormalEventPriority = EventPriority(0)
 LowEventPriority = EventPriority(-1)
 
 
-
 class FillRule(QtEnumeration):
     """ Specifies which method should be used to fill the paths and polygons.
     """
@@ -554,7 +553,6 @@ NoFocus = FocusPolicy(0)
 """ the widget does not accept focus."""
 
 
-
 class FocusReason(QtEnumeration):
     """ This enum specifies why the focus changed. It will be passed through QWidget::setFocus and
         can be retrieved in the QFocusEvent sent to the widget upon focus change.
@@ -578,3 +576,128 @@ MenuBarFocusReason = FocusReason(6)
 """ The menu bar took focus."""
 OtherFocusReason = FocusReason(7)
 """ Another reason, usually application-specific."""
+
+
+class GestureFlag(QtEnumeration):
+    """ This enum type describes additional flags that can be used when subscribing to a gesture.
+
+        This enum was introduced or modified in Qt 4.6.
+
+        The GestureFlags type is a typedef for QFlags<GestureFlag>. It stores an OR combination of GestureFlag values.
+    """
+    ...
+
+
+DontStartGestureOnChildren = GestureFlag(0x01)
+""" By default gestures can start on the widget or over any of its children. Use this flag to 
+    disable this and allow a gesture to start on the widget only."""
+ReceivePartialGestures = GestureFlag(0x02)
+""" Allows any ignored gesture events to be propagated to parent widgets which have specified this hint. 
+    By default only gestures that are in the Qt::GestureStarted state are propagated and the widget always
+    gets the full gesture sequence starting with a gesture in the Qt::GestureStarted state and ending with 
+    a gesture in the Qt::GestureFinished or Qt::GestureCanceled states."""
+IgnoredGesturesPropagateToParent = GestureFlag(0x04)
+""" Since Qt 4.7, this flag allows you to fine-tune gesture event propagation. By setting the flag when grabbing 
+    a gesture all ignored partial gestures will propagate to their parent items."""
+
+
+class GestureState(QtEnumeration):
+    """ This enum type describes the state of a gesture.
+
+        This enum was introduced or modified in Qt 4.6.
+    """
+    ...
+
+
+GestureStarted = GestureState(1)
+""" A continuous gesture has started."""
+GestureUpdated = GestureState(2)
+""" A gesture continues."""
+GestureFinished = GestureState(3)
+""" A gesture has finished."""
+GestureCanceled = GestureState(4)
+""" A gesture was canceled."""
+
+
+class GestureType(QtEnumeration):
+    """ This enum type describes the standard gestures.
+
+        User-defined gestures are registered with the QGestureRecognizer::registerRecognizer() function which
+        generates a custom gesture ID with the Qt::CustomGesture flag set.
+
+        This enum was introduced or modified in Qt 4.6.
+    """
+    ...
+
+
+TapGesture = GestureType(1)
+""" A Tap gesture."""
+TapAndHoldGesture = GestureType(2)
+""" A Tap-And-Hold (Long-Tap) gesture."""
+PanGesture = GestureType(3)
+""" A Pan gesture."""
+PinchGesture = GestureType(4)
+""" A Pinch gesture."""
+SwipeGesture = GestureType(5)
+""" A Swipe gesture."""
+CustomGesture = GestureType(0x0100)
+""" A flag that can be used to test if the gesture is a user-defined gesture ID."""
+
+
+class GlobalColor(QtEnumeration):
+    """ Qt's predefined QColor objects
+    """
+    ...
+
+
+white = GlobalColor(3)
+""" White (#ffffff)"""
+black = GlobalColor(2)
+""" Black (#000000)"""
+red = GlobalColor(7)
+""" Red (#ff0000)"""
+darkRed = GlobalColor(13)
+""" Dark red (#800000)"""
+green = GlobalColor(8)
+""" Green (#00ff00)"""
+darkGreen = GlobalColor(14)
+""" Dark green (#008000)"""
+blue = GlobalColor(9)
+""" Blue (#0000ff)"""
+darkBlue = GlobalColor(15)
+""" Dark blue (#000080)"""
+cyan = GlobalColor(10)
+""" Cyan (#00ffff)"""
+darkCyan = GlobalColor(16)
+""" Dark cyan (#008080)"""
+magenta = GlobalColor(11)
+""" Magenta (#ff00ff)"""
+darkMagenta = GlobalColor(17)
+""" Dark magenta (#800080)"""
+yellow = GlobalColor(12)
+""" Yellow (#ffff00)"""
+darkYellow = GlobalColor(18)
+""" Dark yellow (#808000)"""
+gray = GlobalColor(5)
+""" Gray (#a0a0a4)"""
+darkGray = GlobalColor(4)
+""" Dark gray (#808080)"""
+lightGray = GlobalColor(6)
+""" Light gray (#c0c0c0)"""
+transparent = GlobalColor(19)
+""" a transparent black value (i.e., QColor(0, 0, 0, 0))"""
+color0 = GlobalColor(0)
+""" 0 pixel value (for bitmaps)"""
+color1 = GlobalColor(1)
+""" 1 pixel value (for bitmaps)"""
+
+
+class HANDLE(QtEnumeration):
+    """ Platform-specific handle type for system objects. This is equivalent to void * on Mac OS X and embedded Linux,
+        and to unsigned long on X11. On Windows it is the DWORD returned by the Win32 function getCurrentThreadId().
+
+        Warning: Using this type is not portable.
+    """
+    ...
+
+
