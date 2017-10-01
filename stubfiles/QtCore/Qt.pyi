@@ -701,3 +701,166 @@ class HANDLE(QtEnumeration):
     ...
 
 
+class HitTestAccuracy(QtEnumeration):
+    """ This enum contains the types of accuracy that can be used by the QTextDocument class when testing for mouse clicks on text documents.
+    """
+    ...
+
+
+ExactHit = HitTestAccuracy(0)
+""" The point at which input occurred must coincide exactly with input-sensitive parts of the document."""
+FuzzyHit = HitTestAccuracy(1)
+""" The point at which input occurred can lie close to input-sensitive parts of the document."""
+
+
+class ImageConversionFlag(QtEnumeration):
+    """ The options marked "(default)" are set if no other values from the list are included (since the defaults are zero).
+
+        Don't do any format conversions on the image. Can be useful when converting a QImage to a QPixmap for a one-time rendering operation for example.
+
+        The ImageConversionFlags type is a typedef for QFlags<ImageConversionFlag>. It stores an OR combination of ImageConversionFlag values.
+    """
+    ...
+
+# Color/Mono Preference:
+AutoColor = ImageConversionFlag(0x00000000)
+""" (default) - If the image has depth 1 and contains only black and white pixels, the pixmap becomes monochrome."""
+ColorOnly = ImageConversionFlag(0x00000003)
+""" The pixmap is dithered/converted to the native display depth."""
+MonoOnly = ImageConversionFlag(0x00000002)
+""" The pixmap becomes monochrome. If necessary, it is dithered using the chosen dithering algorithm."""
+
+# Dithering mode preference for RGB channels:
+DiffuseDither = ImageConversionFlag(0x00000000)
+""" (default) - A high-quality dither."""
+OrderedDither = ImageConversionFlag(0x00000010)
+""" A faster, more ordered dither."""
+ThresholdDither = ImageConversionFlag(0x00000020)
+""" No dithering; closest color is used."""
+
+# Dithering mode preference for alpha channel:
+ThresholdAlphaDither = ImageConversionFlag(0x00000000)
+""" (default) - No dithering."""
+OrderedAlphaDither = ImageConversionFlag(0x00000004)
+""" A faster, more ordered dither."""
+DiffuseAlphaDither = ImageConversionFlag(0x00000008)
+""" A high-quality dither."""
+
+# Color matching versus dithering preference:
+PreferDither = ImageConversionFlag(0x00000040)
+""" (default when converting to a pixmap) - Always dither 32-bit images when the image is converted to 8 bits."""
+AvoidDither = ImageConversionFlag(0x00000080)
+""" (default when converting for the purpose of saving to file) - Dither 32-bit images only if the image has more than 256 colors and it is being converted to 8 bits."""
+NoOpaqueDetection = ImageConversionFlag(0x00000100)
+""" Do not check whether the image contains non-opaque pixels. Use this if you know that the image is semi-transparent and you want to avoid the overhead of 
+    checking the pixels in the image until a non-opaque pixel is found, or if you want the pixmap to retain an alpha channel for some other reason. 
+    If the image has no alpha channel this flag has no effect.
+"""
+
+
+class InputMethodHint(QtEnumeration):
+    """
+        Note: If several exclusive flags are ORed together, the resulting character set will consist of the union of the specified sets.
+        For instance specifying ImhNumbersOnly and ImhUppercaseOnly would yield a set consisting of numbers and uppercase letters.
+
+        The InputMethodHints type is a typedef for QFlags<InputMethodHint>. It stores an OR combination of InputMethodHint values.
+    """
+    ...
+
+
+ImhNone = InputMethodHint(0x0)
+""" No hints."""
+ImhHiddenText = InputMethodHint(0x1)
+""" Characters should be hidden, as is typically used when entering passwords. This is automatically set when setting QLineEdit::echoMode to Password."""
+ImhNoAutoUppercase = InputMethodHint(0x2)
+""" The input method should not try to automatically switch to upper case when a sentence ends."""
+ImhPreferNumbers = InputMethodHint(0x4)
+""" Numbers are preferred (but not required)."""
+ImhPreferUppercase = InputMethodHint(0x8)
+""" Upper case letters are preferred (but not required)."""
+ImhPreferLowercase = InputMethodHint(0x10)
+""" Lower case letters are preferred (but not required)."""
+ImhNoPredictiveText = InputMethodHint(0x20)
+""" Do not use predictive text (i.e. dictionary lookup) while typing."""
+ImhDigitsOnly = InputMethodHint(0x10000)
+""" Only digits are allowed."""
+ImhFormattedNumbersOnly = InputMethodHint(0x20000)
+""" Only number input is allowed. This includes decimal point and minus sign."""
+ImhUppercaseOnly = InputMethodHint(0x40000)
+""" Only upper case letter input is allowed."""
+ImhLowercaseOnly = InputMethodHint(0x80000)
+""" Only lower case letter input is allowed."""
+ImhDialableCharactersOnly = InputMethodHint(0x100000)
+""" Only characters suitable for phone dialling are allowed."""
+ImhEmailCharactersOnly = InputMethodHint(0x200000)
+""" Only characters suitable for email addresses are allowed."""
+ImhUrlCharactersOnly = InputMethodHint(0x400000)
+""" Only characters suitable for URLs are allowed."""
+ImhExclusiveInputMask = InputMethodHint(0xffff0000)
+""" This mask yields nonzero if any of the exclusive flags are used."""
+
+
+class InputMethodQuery(QtEnumeration): ...
+
+
+ImMicroFocus = InputMethodQuery(0)
+""" The rectangle covering the area of the input cursor in widget coordinates."""
+ImFont = InputMethodQuery(1)
+""" The currently used font for text input."""
+ImCursorPosition = InputMethodQuery(2)
+""" The logical position of the cursor within the text surrounding the input area (see ImSurroundingText)."""
+ImSurroundingText = InputMethodQuery(3)
+""" The plain text around the input area, for example the current paragraph."""
+ImCurrentSelection = InputMethodQuery(4)
+""" The currently selected text."""
+ImMaximumTextLength = InputMethodQuery(5)
+""" The maximum number of characters that the widget can hold. If there is no limit, QVariant() is returned."""
+ImAnchorPosition = InputMethodQuery(6)
+""" The position of the selection anchor. This may be less or greater than ImCursorPosition, depending on which side of selection the cursor is. 
+    If there is no selection, it returns the same as ImCursorPosition.
+"""
+
+
+class ItemDataRole(QtEnumeration):
+    """ Each item in the model has a set of data elements associated with it, each with its own role. The roles are used by the view to indicate to the model
+        which type of data it needs. Custom models should return data in these types.
+    """
+    ...
+
+
+DisplayRole = ItemDataRole(0)
+""" The key data to be rendered in the form of text. (QString)"""
+DecorationRole = ItemDataRole(1)
+""" The data to be rendered as a decoration in the form of an icon. (QColor, QIcon or QPixmap)"""
+EditRole = ItemDataRole(2)
+""" The data in a form suitable for editing in an editor. (QString)"""
+ToolTipRole = ItemDataRole(3)
+""" The data displayed in the item's tooltip. (QString)"""
+StatusTipRole = ItemDataRole(4)
+""" The data displayed in the status bar. (QString)"""
+WhatsThisRole = ItemDataRole(5)
+""" The data displayed for the item in "What's This?" mode. (QString)"""
+SizeHintRole = ItemDataRole(13)
+""" The size hint for the item that will be supplied to views. (QSize)"""
+FontRole = ItemDataRole(6)
+""" The font used for items rendered with the default delegate. (QFont)"""
+TextAlignmentRole = ItemDataRole(7)
+""" The alignment of the text for items rendered with the default delegate. (Qt::AlignmentFlag)"""
+BackgroundRole = ItemDataRole(8)
+""" The background brush used for items rendered with the default delegate. (QBrush)"""
+BackgroundColorRole = ItemDataRole(8)
+""" This role is obsolete. Use BackgroundRole instead."""
+ForegroundRole = ItemDataRole(9)
+""" The foreground brush (text color, typically) used for items rendered with the default delegate. (QBrush)"""
+TextColorRole = ItemDataRole(9)
+""" This role is obsolete. Use ForegroundRole instead."""
+CheckStateRole = ItemDataRole(10)
+""" This role is used to obtain the checked state of an item. (Qt::CheckState)"""
+InitialSortOrderRole = ItemDataRole(14)
+""" This role is used to obtain the initial sort order of a header view section. (Qt::SortOrder). This role was introduced in Qt 4.8."""
+AccessibleTextRole = ItemDataRole(11)
+""" The text to be used by accessibility extensions and plugins, such as screen readers. (QString)"""
+AccessibleDescriptionRole = ItemDataRole(12)
+""" A description of the item for accessibility purposes. (QString)"""
+UserRole = ItemDataRole(32)
+""" The first role that can be used for application-specific purposes."""
