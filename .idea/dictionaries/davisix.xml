@@ -2,6 +2,7 @@
   <dictionary name="davisix">
     <words>
       <w>backtab</w>
+      <w>checkable</w>
       <w>crosshair</w>
       <w>pyqt</w>
     </words>

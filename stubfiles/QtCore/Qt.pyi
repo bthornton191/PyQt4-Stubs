@@ -864,3 +864,574 @@ AccessibleDescriptionRole = ItemDataRole(12)
 """ A description of the item for accessibility purposes. (QString)"""
 UserRole = ItemDataRole(32)
 """ The first role that can be used for application-specific purposes."""
+
+
+class ItemFlag(QtEnumeration):
+    """ This enum describes the properties of an item.
+
+        Note that checkable items need to be given both a suitable set of flags and an initial state, indicating whether the item is checked or not. T
+        his is handled automatically for model/view components, but needs to be explicitly set for instances of QListWidgetItem, QTableWidgetItem, and QTreeWidgetItem.
+
+        The ItemFlags type is a typedef for QFlags<ItemFlag>. It stores an OR combination of ItemFlag values.
+    """
+    ...
+
+
+NoItemFlags = ItemFlag(0)
+""" It does not have any properties set."""
+ItemIsSelectable = ItemFlag(1)
+""" It can be selected."""
+ItemIsEditable = ItemFlag(2)
+""" It can be edited."""
+ItemIsDragEnabled = ItemFlag(4)
+""" It can be dragged."""
+ItemIsDropEnabled = ItemFlag(8)
+""" It can be used as a drop target."""
+ItemIsUserCheckable = ItemFlag(16)
+""" It can be checked or unchecked by the user."""
+ItemIsEnabled = ItemFlag(32)
+""" The user can interact with the item."""
+ItemIsTristate = ItemFlag(64)
+""" The item is checkable with three separate states."""
+
+
+class ItemSelectionMode(QtEnumeration):
+    """ This enum is used in QGraphicsItem, QGraphicsScene and QGraphicsView to specify how items are selected, or how to determine if a shapes and items collide.
+    """
+    ...
+
+
+ContainsItemShape = ItemSelectionMode(0x0)
+""" The output list contains only items whose shape is fully contained inside the selection area. Items that intersect with the area's outline are not included."""
+IntersectsItemShape = ItemSelectionMode(0x1)
+""" The output list contains both items whose shape is fully contained inside the selection area, and items that intersect with the area's outline. 
+    This is a common mode for rubber band selection.
+"""
+ContainsItemBoundingRect = ItemSelectionMode(0x2)
+""" The output list contains only items whose bounding rectangle is fully contained inside the selection area. 
+    Items that intersect with the area's outline are not included.
+"""
+IntersectsItemBoundingRect = ItemSelectionMode(0x3)
+""" The output list contains both items whose bounding rectangle is fully contained inside the selection area, and items that intersect with the area's outline. 
+    This method is commonly used for determining areas that need redrawing.
+"""
+
+
+class Key(QtEnumeration):
+    """ The key names used by Qt.
+    """
+    ...
+
+
+Key_Escape = Key(0x01000000)
+Key_Tab = Key(0x01000001)
+Key_Backtab = Key(0x01000002)
+Key_Backspace = Key(0x01000003)
+Key_Return = Key(0x01000004)
+Key_Enter = Key(0x01000005)
+
+Key_Insert = Key(0x01000006)
+Key_Delete = Key(0x01000007)
+Key_Pause = Key(0x01000008)
+Key_Print = Key(0x01000009)
+Key_SysReq = Key(0x0100000a)
+
+Key_Clear = Key(0x0100000b)
+Key_ = Key(0x0100000c)
+Key_ = Key(0x0100000d)
+Key_ = Key(0x0100000e)
+Key_ = Key(0x0100000f)
+
+Key_ = Key(0x01000010)
+Key_ = Key(0x01000011)
+Key_ = Key(0x01000012)
+Key_ = Key(0x01000013)
+Key_ = Key(0x01000014)
+
+Key_ = Key(0x01000015)
+Key_ = Key(0x01000016)
+Key_ = Key(0x01000017)
+Key_ = Key(0x01000020)
+Key_ = Key(0x01000021)
+
+Key_ = Key(0x01000022)
+Key_ = Key(0x01001103)
+Key_ = Key(0x01000024)
+Key_ = Key(0x01000025)
+Key_ = Key(0x01000026)
+
+Key_ = Key(0x01000030)
+Key_ = Key(0x01000031)
+Key_ = Key(0x01000032)
+Key_ = Key(0x01000033)
+Key_ = Key(0x01000034)
+
+Key_ = Key(0x01000035)
+Key_ = Key(0x01000036)
+Key_ = Key(0x01000037)
+Key_ = Key(0x01000038)
+Key_ = Key(0x01000039)
+
+Key_ = Key(0x0100003a)
+Key_ = Key(0x0100003b)
+Key_ = Key(0x0100003c)
+Key_ = Key(0x0100003d)
+Key_ = Key(0x0100003e)
+
+Key_ = Key(0x0100003f)
+Key_ = Key(0x01000040)
+Key_ = Key(0x01000041)
+Key_ = Key(0x01000042)
+Key_ = Key(0x01000043)
+
+Key_ = Key(0x01000044)
+Key_ = Key(0x01000045)
+Key_ = Key(0x01000046)
+Key_ = Key(0x01000047)
+Key_ = Key(0x01000048)
+
+Key_ = Key(0x01000049)
+Key_ = Key(0x0100004a)
+Key_ = Key(0x0100004b)
+Key_ = Key(0x0100004c)
+Key_ = Key(0x0100004d)
+
+Key_ = Key(0x0100004e)
+Key_ = Key(0x0100004f)
+Key_ = Key(0x01000050)
+Key_ = Key(0x01000051)
+Key_ = Key(0x01000052)
+
+Key_ = Key(0x01000053)
+Key_ = Key(0x01000054)
+Key_ = Key(0x01000055)
+Key_ = Key(0x01000056)
+Key_ = Key(0x01000057)
+
+Key_ = Key(0x01000058)
+Key_ = Key(0x01000059)
+Key_ = Key(0x01000060)
+Key_Space = Key(0x20)
+Key_Any = Key_Space
+
+Key_ = Key(0x21)
+Key_ = Key(0x22)
+Key_ = Key(0x23)
+Key_ = Key(0x24)
+Key_ = Key(0x25)
+
+Key_ = Key(0x26)
+Key_ = Key(0x27)
+Key_ = Key(0x28)
+Key_ = Key(0x29)
+Key_ = Key(0x2a)
+
+Key_ = Key(0x2b)
+Key_ = Key(0x2c)
+Key_ = Key(0x2d)
+Key_ = Key(0x2e)
+Key_ = Key(0x2f)
+
+Key_ = Key(0x30)
+Key_ = Key(0x31)
+Key_ = Key(0x32)
+Key_ = Key(0x33)
+Key_ = Key(0x34)
+
+Key_ = Key(0x35)
+Key_ = Key(0x36)
+Key_ = Key(0x37)
+Key_ = Key(0x38)
+Key_ = Key(0x39)
+
+Key_ = Key(0x3a)
+Key_ = Key(0x3b)
+Key_ = Key(0x3c)
+Key_ = Key(0x3d)
+Key_ = Key(0x3e)
+
+Key_ = Key(0x3f)
+Key_ = Key(0x40)
+Key_ = Key(0x41)
+Key_ = Key(0x42)
+Key_ = Key(0x43)
+
+Key_ = Key(0x44)
+Key_ = Key(0x45)
+Key_ = Key(0x46)
+Key_ = Key(0x47)
+Key_ = Key(0x48)
+
+Key_ = Key(0x49)
+Key_ = Key(0x4a)
+Key_ = Key(0x4b)
+Key_ = Key(0x4c)
+Key_ = Key(0x4d)
+
+Key_ = Key(0x4e)
+Key_ = Key(0x4f)
+Key_ = Key(0x50)
+Key_ = Key(0x51)
+Key_ = Key(0x52)
+
+Key_ = Key(0x53)
+Key_ = Key(0x54)
+Key_ = Key(0x55)
+Key_ = Key(0x56)
+Key_ = Key(0x57)
+
+Key_ = Key(0x58)
+Key_ = Key(0x59)
+Key_ = Key(0x5a)
+Key_ = Key(0x5b)
+Key_ = Key(0x5c)
+
+Key_ = Key(0x5d)
+Key_ = Key(0x5e)
+Key_ = Key(0x5f)
+Key_ = Key(0x60)
+Key_ = Key(0x7b)
+
+Key_ = Key(0x7c)
+Key_ = Key(0x7d)
+Key_ = Key(0x7e)
+Key_ = Key(0x0a0)
+Key_ = Key(0x0a1)
+
+Key_ = Key(0x0a2)
+Key_ = Key(0x0a3)
+Key_ = Key(0x0a4)
+Key_ = Key(0x0a5)
+Key_ = Key(0x0a6)
+
+Key_ = Key(0x0a7)
+Key_ = Key(0x0a8)
+Key_ = Key(0x0a9)
+Key_ = Key(0x0aa)
+Key_ = Key(0x0ab)
+
+Key_ = Key(0x0ac)
+Key_ = Key(0x0ad)
+Key_ = Key(0x0ae)
+Key_ = Key(0x0af)
+Key_ = Key(0x0b0)
+
+Key_ = Key(0x0b1)
+Key_ = Key(0x0b2)
+Key_ = Key(0x0b3)
+Key_ = Key(0x0b4)
+Key_ = Key(0x0b5)
+
+Key_ = Key(0x0b6)
+Key_ = Key(0x0b7)
+Key_ = Key(0x0b8)
+Key_ = Key(0x0b9)
+Key_ = Key(0x0ba)
+
+Key_ = Key(0x0bb)
+Key_ = Key(0x0bc)
+Key_ = Key(0x0bd)
+Key_ = Key(0x0be)
+Key_ = Key(0x0bf)
+
+Key_ = Key(0x0c0)
+Key_ = Key(0x0c1)
+Key_ = Key(0x0c2)
+Key_ = Key(0x0c3)
+Key_ = Key(0x0c4)
+
+Key_ = Key(0x0c5)
+Key_ = Key(0x0c6)
+Key_ = Key(0x0c7)
+Key_ = Key(0x0c8)
+Key_ = Key(0x0c9)
+
+Key_ = Key(0x0ca)
+Key_ = Key(0x0cb)
+Key_ = Key(0x0cc)
+Key_ = Key(0x0cd)
+Key_ = Key(0x0ce)
+
+Key_ = Key(0x0cf)
+Key_ = Key(0x0d0)
+Key_ = Key(0x0d1)
+Key_ = Key(0x0d2)
+Key_ = Key(0x0d3)
+
+Key_ = Key(0x0d4)
+Key_ = Key(0x0d5)
+Key_ = Key(0x0d6)
+Key_ = Key(0x0d7)
+Key_ = Key(0x0d8)
+
+Key_ = Key(0x0d9)
+Key_ = Key(0x0da)
+Key_ = Key(0x0db)
+Key_ = Key(0x0dc)
+Key_ = Key(0x0dd)
+
+Key_ = Key(0x0de)
+Key_ = Key(0x0df)
+Key_ = Key(0x0f7)
+Key_ = Key(0x0ff)
+Key_ = Key(0x01001120)
+
+Key_ = Key(0x01001120)
+Key_ = Key(0x01001137)
+Key_ = Key(0x0100113c)
+Key_ = Key(0x0100113d)
+Key_ = Key(0x0100113e)
+
+Key_ = Key(0x0100117e)
+Key_ = Key(0x01001121)
+Key_ = Key(0x01001122)
+Key_ = Key(0x01001123)
+Key_ = Key(0x01001124)
+
+Key_ = Key(0x01001125)
+Key_ = Key(0x01001126)
+Key_ = Key(0x01001127)
+Key_ = Key(0x01001128)
+Key_ = Key(0x01001129)
+
+Key_ = Key(0x0100112a)
+Key_ = Key(0x0100112b)
+Key_ = Key(0x0100112c)
+Key_ = Key(0x0100112d)
+Key_ = Key(0x0100112e)
+
+Key_ = Key(0x0100112f)
+Key_ = Key(0x01001130)
+Key_ = Key(0x01001131)
+Key_ = Key(0x01001132)
+Key_ = Key(0x01001133)
+
+Key_ = Key(0x01001134)
+Key_ = Key(0x01001135)
+Key_ = Key(0x01001136)
+Key_ = Key(0x01001137)
+Key_ = Key(0x01001138)
+
+Key_ = Key(0x0100113a)
+Key_ = Key(0x0100113b)
+Key_ = Key(0x0100113c)
+Key_ = Key(0x0100113d)
+Key_ = Key(0x0100113e)
+
+Key_ = Key(0x01001250)
+Key_ = Key(0x01001251)
+Key_ = Key(0x01001252)
+Key_ = Key(0x01001253)
+Key_ = Key(0x01001254)
+
+Key_ = Key(0x01001255)
+Key_ = Key(0x01001256)
+Key_ = Key(0x01001257)
+Key_ = Key(0x01001258)
+Key_ = Key(0x01001259)
+
+Key_ = Key(0x0100125a)
+Key_ = Key(0x0100125b)
+Key_ = Key(0x0100125c)
+Key_ = Key(0x0100125d)
+Key_ = Key(0x0100125e)
+
+Key_ = Key(0x0100125f)
+Key_ = Key(0x01001260)
+Key_ = Key(0x01001261)
+Key_ = Key(0x01001262)
+Key_ = Key(0x01000061)
+
+Key_ = Key(0x01000062)
+Key_ = Key(0x01000063)
+Key_ = Key(0x01000064)
+Key_ = Key(0x01000070)
+Key_ = Key(0x01000071)
+
+Key_ = Key(0x01000072)
+Key_ = Key(0x01000074)
+Key_ = Key(0x01000075)
+Key_ = Key(0x01000076)
+Key_ = Key(0x01000077)
+
+Key_ = Key(0x01000080)
+Key_ = Key(0x01000081)
+Key_ = Key(0x01000082)
+Key_ = Key(0x01000083)
+Key_ = Key(0x01000084)
+
+Key_ = Key(0x1000085)
+Key_ = Key(0x1000086)
+Key_ = Key(0x01000090)
+Key_ = Key(0x01000091)
+Key_ = Key(0x01000092)
+
+Key_ = Key(0x01000094)
+Key_ = Key(0x010000a0)
+Key_ = Key(0x010000a1)
+Key_ = Key(0x010000a2)
+Key_ = Key(0x010000a3)
+
+Key_ = Key(0x01000094)
+Key_ = Key(0x010000a0)
+Key_ = Key(0x010000a1)
+Key_ = Key(0x010000a2)
+Key_ = Key(0x010000a3)
+
+Key_ = Key(0x010000a4)
+Key_ = Key(0x010000a5)
+Key_ = Key(0x010000a6)
+Key_ = Key(0x010000a7)
+Key_ = Key(0x010000a8)
+
+Key_ = Key(0x010000a9)
+Key_ = Key(0x010000aa)
+Key_ = Key(0x010000ab)
+Key_ = Key(0x010000ac)
+Key_ = Key(0x010000ad)
+
+Key_ = Key(0x010000ae)
+Key_ = Key(0x010000af)
+Key_ = Key(0x010000b0)
+Key_ = Key(0x010000b1)
+Key_ = Key(0x0100000e)
+
+Key_ = Key(0x0100000f)
+Key_ = Key(0x010000b2)
+Key_ = Key(0x010000b3)
+Key_ = Key(0x010000b4)
+Key_ = Key(0x010000b5)
+
+Key_ = Key(0x010000b6)
+Key_ = Key(0x010000b7)
+Key_ = Key(0x010000b8)
+Key_ = Key(0x010000b9)
+Key_ = Key(0x010000ba)
+
+Key_ = Key(0x010000bb)
+Key_ = Key(0x010000bc)
+Key_ = Key(0x010000bd)
+Key_ = Key(0x010000be)
+Key_ = Key(0x010000bf)
+
+Key_ = Key(0x010000c0)
+Key_ = Key(0x010000c1)
+Key_ = Key(0x010000c2)
+Key_ = Key(0x010000c3)
+Key_ = Key(0x010000c4)
+
+Key_ = Key(0x010000c5)
+Key_ = Key(0x010000c6)
+Key_ = Key(0x010000c7)
+Key_ = Key(0x010000c8)
+Key_ = Key(0x010000c9)
+
+Key_ = Key(0x010000ca)
+Key_ = Key(0x010000cb)
+Key_ = Key(0x010000cc)
+Key_ = Key(0x010000cd)
+Key_ = Key(0x010000ce)
+
+Key_ = Key(0x010000cf)
+Key_ = Key(0x010000d0)
+Key_ = Key(0x010000d1)
+Key_ = Key(0x010000d2)
+Key_ = Key(0x010000d3)
+
+Key_ = Key(0x010000d4)
+Key_ = Key(0x010000d5)
+Key_ = Key(0x010000d6)
+Key_ = Key(0x010000d7)
+Key_ = Key(0x010000d8)
+
+Key_ = Key(0x010000d9)
+Key_ = Key(0x010000da)
+Key_ = Key(0x010000db)
+Key_ = Key(0x010000dc)
+Key_ = Key(0x010000dd)
+
+Key_ = Key(0x010000de)
+Key_ = Key(0x010000df)
+Key_ = Key(0x010000e0)
+Key_ = Key(0x010000e1)
+Key_ = Key(0x010000e2)
+
+Key_ = Key(0x010000e3)
+Key_ = Key(0x010000e4)
+Key_ = Key(0x010000e5)
+Key_ = Key(0x010000e6)
+Key_ = Key(0x010000e7)
+
+Key_ = Key(0x010000e8)
+Key_ = Key(0x010000e9)
+Key_ = Key(0x010000ea)
+Key_ = Key(0x010000eb)
+Key_ = Key(0x010000ec)
+
+Key_ = Key(0x010000ed)
+Key_ = Key(0x010000ee)
+Key_ = Key(0x010000ef)
+Key_ = Key(0x010000f0)
+Key_ = Key(0x010000f1)
+
+Key_ = Key(0x010000f2)
+Key_ = Key(0x010000f3)
+Key_ = Key(0x010000f4)
+Key_ = Key(0x010000f5)
+Key_ = Key(0x010000f6)
+
+Key_ = Key(0x010000f7)
+Key_ = Key(0x010000f8)
+Key_ = Key(0x010000f9)
+Key_ = Key(0x010000fa)
+Key_ = Key(0x010000fb)
+
+Key_ = Key(0x010000fc)
+Key_ = Key(0x010000fd)
+Key_ = Key(0x010000fe)
+Key_ = Key(0x010000ff)
+Key_ = Key(0x01000100)
+
+Key_ = Key(0x01000101)
+Key_ = Key(0x01000102)
+Key_ = Key(0x01000103)
+Key_ = Key(0x01000104)
+Key_ = Key(0x01000105)
+
+Key_ = Key(0x01000106)
+Key_ = Key(0x01000107)
+Key_ = Key(0x01000108)
+Key_ = Key(0x01000109)
+Key_ = Key(0x0100010a)
+
+Key_ = Key(0x0100010b)
+Key_ = Key(0x0100010c)
+Key_ = Key(0x0100010d)
+Key_ = Key(0x0100ffff)
+Key_ = Key(0x01ffffff)
+
+Key_ = Key(0x01100004)
+Key_ = Key(0x01100020)
+Key_ = Key(0x01100021)
+Key_ = Key(0x01100000)
+Key_ = Key(0x01100001)
+
+Key_ = Key(0x01100002)
+Key_ = Key(0x01100003)
+Key_ = Key(0x01100004)
+Key_ = Key(0x01100005)
+Key_ = Key(0x01010002)
+
+Key_ = Key(0x01010000)
+Key_ = Key(0x01010001)
+Key_ = Key(0x01100007)
+Key_ = Key(0x01100008)
+Key_ = Key(0x01100009)
+
+Key_ = Key(0x01020003)
+Key_ = Key(0x01020002)
+Key_ = Key(0x01020005)
+Key_ = Key(0x01020004)
+Key_ = Key(0x01020006)
+
+Key_ = Key(0x01020001)
