@@ -22,7 +22,6 @@ class QObject(object):
         meta-object associated with that object.
     """
 
-    # TODO: Figure out how to document the Qt enum.
     # TODO: Determine if connect and disconnect should be included in this context (as opposed to solely pyqtSignal).
     # def connect(self,
     #             sender: QObject,
