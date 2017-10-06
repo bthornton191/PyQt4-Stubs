@@ -7,7 +7,6 @@ class QtEnumeration(object):
         return self.value | other.value
 
 
-
 class AlignmentFlag(QtEnumeration):
     """ This enum type is used to describe alignment. It contains horizontal and vertical flags that can be combined to produce the required effect.
 The horizontal flags are:
@@ -3366,11 +3365,9 @@ WindowActive = WindowState(0x00000008)
 
 
 class WindowType(QtEnumeration):
-    """ This enum type is used to specify various window-system properties for the widget. They are fairly unusual but necessary in a few cases. Some of these flags depend on whether the underlying window manager supports them.
-The main types are
-There are also a number of flags which you can use to customize the appearance of top-level windows. These have no effect on other windows:
-Obsolete flags:
-
+    """ This enum type is used to specify various window-system properties for the widget. They are fairly unusual but necessary in a few cases.
+        Some of these flags depend on whether the underlying window manager supports them.
+        There are also a number of flags which you can use to customize the appearance of top-level windows. These have no effect on other windows.
     """
     ...
 
