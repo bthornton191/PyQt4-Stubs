@@ -6,9 +6,12 @@
 
 # imports
 import sip as __sip
+from QChar import QChar
+from QStringList import QStringList
+from QByteArray import QByteArray
 
 
-class QString(): # skipped bases: <type 'sip.simplewrapper'>
+class QString(str): # skipped bases: <type 'sip.simplewrapper'>
     """
     QString()
     QString(int, QChar)
@@ -89,7 +92,7 @@ class QString(): # skipped bases: <type 'sip.simplewrapper'>
         """
         return 0
 
-    def endsWith(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    def endswith(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QString.endsWith(QString, Qt.CaseSensitivity cs=Qt.CaseSensitive) -> bool
         QString.endsWith(QStringRef, Qt.CaseSensitivity cs=Qt.CaseSensitive) -> bool
@@ -162,7 +165,7 @@ class QString(): # skipped bases: <type 'sip.simplewrapper'>
         """ QString.left(int) -> QString """
         return QString
 
-    def leftJustified(self, p_int, QChar_fillChar=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def leftJustified(self, p_int, QChar_fillChar=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QString.leftJustified(int, QChar fillChar=QLatin1Char(' '), bool truncate=False) -> QString """
         pass
 
@@ -250,7 +253,7 @@ class QString(): # skipped bases: <type 'sip.simplewrapper'>
         """ QString.right(int) -> QString """
         return QString
 
-    def rightJustified(self, p_int, QChar_fillChar=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def rightJustified(self, p_int, QChar_fillChar=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__
         """ QString.rightJustified(int, QChar fillChar=QLatin1Char(' '), bool truncate=False) -> QString """
         pass
 
@@ -289,7 +292,7 @@ class QString(): # skipped bases: <type 'sip.simplewrapper'>
         """ QString.squeeze() """
         pass
 
-    def startsWith(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
+    def startswith(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads
         """
         QString.startsWith(QString, Qt.CaseSensitivity cs=Qt.CaseSensitive) -> bool
         QString.startsWith(QStringRef, Qt.CaseSensitivity cs=Qt.CaseSensitive) -> bool

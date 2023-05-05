@@ -5,10 +5,13 @@
 # no doc
 
 # imports
+from typing import Type
 import PyQt4.QtCore as __PyQt4_QtCore
 
 
-from QWidget import QWidget
+from .QWidget import QWidget
+from .QAction import QAction
+from ..QtCore.pyqtSignal import pyqtSignal
 
 class QDockWidget(QWidget):
     """
@@ -221,9 +224,10 @@ class QDockWidget(QWidget):
     def updateMicroFocus(self, *args, **kwargs): # real signature unknown
         pass
 
-    def visibilityChanged(self, *args, **kwargs): # real signature unknown
-        """ QDockWidget.visibilityChanged[bool] [signal] """
-        pass
+    visibilityChanged: Type[pyqtSignal]
+    # def visibilityChanged(self, *args, **kwargs): # real signature unknown
+    #     """ QDockWidget.visibilityChanged[bool] [signal] """
+    #     pass
 
     def wheelEvent(self, *args, **kwargs): # real signature unknown
         pass

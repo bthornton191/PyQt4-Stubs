@@ -5,10 +5,12 @@
 # no doc
 
 # imports
+from typing import Type
 import sip as __sip
 
 
 from QObject import QObject
+from .pyqtSignal import pyqtSignal
 
 class QThread(QObject):
     """ QThread(QObject parent=None) """
@@ -104,10 +106,11 @@ class QThread(QObject):
     def start(self, QThread_Priority_priority=None): # real signature unknown; restored from __doc__
         """ QThread.start(QThread.Priority priority=QThread.InheritPriority) """
         pass
-
-    def started(self, *args, **kwargs): # real signature unknown
-        """ QThread.started [signal] """
-        pass
+    
+    started: Type[pyqtSignal]
+    # def started(self, *args, **kwargs): # real signature unknown
+    #     """ QThread.started [signal] """
+    #     pass
 
     def terminate(self): # real signature unknown; restored from __doc__
         """ QThread.terminate() """

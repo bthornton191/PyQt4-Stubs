@@ -5,10 +5,12 @@
 # no doc
 
 # imports
+from typing import Type
 import sip as __sip
 
 
 from QObject import QObject
+from pyqtSignal import pyqtSignal
 
 class QTimer(QObject):
     """ QTimer(QObject parent=None) """
@@ -72,9 +74,10 @@ class QTimer(QObject):
         """ QTimer.stop() """
         pass
 
-    def timeout(self, *args, **kwargs): # real signature unknown
-        """ QTimer.timeout [signal] """
-        pass
+    timeout: Type[pyqtSignal]
+    # def timeout(self, *args, **kwargs): # real signature unknown
+    #     """ QTimer.timeout [signal] """
+    #     pass
 
     def timerEvent(self, QTimerEvent): # real signature unknown; restored from __doc__
         """ QTimer.timerEvent(QTimerEvent) """

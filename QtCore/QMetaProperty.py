@@ -1,3 +1,4 @@
+from __future__ import annotations
 # encoding: utf-8
 # module PyQt4.QtCore
 # from C:\Python27\lib\site-packages\PyQt4\QtCore.pyd
@@ -5,7 +6,11 @@
 # no doc
 
 # imports
+from PyQt4.QtCore import QObject
 import sip as __sip
+from .QMetaEnum import QMetaEnum
+from .QMetaMethod import QMetaMethod
+from .QVariant import QVariant
 
 
 class QMetaProperty(): # skipped bases: <type 'sip.simplewrapper'>
@@ -17,67 +22,67 @@ class QMetaProperty(): # skipped bases: <type 'sip.simplewrapper'>
         """ QMetaProperty.enumerator() -> QMetaEnum """
         return QMetaEnum
 
-    def hasNotifySignal(self): # real signature unknown; restored from __doc__
+    def hasNotifySignal(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.hasNotifySignal() -> bool """
         return False
 
-    def hasStdCppSet(self): # real signature unknown; restored from __doc__
+    def hasStdCppSet(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.hasStdCppSet() -> bool """
         return False
 
-    def isConstant(self): # real signature unknown; restored from __doc__
+    def isConstant(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isConstant() -> bool """
         return False
 
-    def isDesignable(self, QObject_object=None): # real signature unknown; restored from __doc__
+    def isDesignable(self, obj: QObject=None)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isDesignable(QObject object=None) -> bool """
         return False
 
-    def isEditable(self, QObject_object=None): # real signature unknown; restored from __doc__
+    def isEditable(self, obj: QObject=None)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isEditable(QObject object=None) -> bool """
         return False
 
-    def isEnumType(self): # real signature unknown; restored from __doc__
+    def isEnumType(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isEnumType() -> bool """
         return False
 
-    def isFinal(self): # real signature unknown; restored from __doc__
+    def isFinal(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isFinal() -> bool """
         return False
 
-    def isFlagType(self): # real signature unknown; restored from __doc__
+    def isFlagType(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isFlagType() -> bool """
         return False
 
-    def isReadable(self): # real signature unknown; restored from __doc__
+    def isReadable(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isReadable() -> bool """
         return False
 
-    def isResettable(self): # real signature unknown; restored from __doc__
+    def isResettable(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isResettable() -> bool """
         return False
 
-    def isScriptable(self, QObject_object=None): # real signature unknown; restored from __doc__
+    def isScriptable(self, obj: QObject=None)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isScriptable(QObject object=None) -> bool """
         return False
 
-    def isStored(self, QObject_object=None): # real signature unknown; restored from __doc__
+    def isStored(self, obj: QObject=None)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isStored(QObject object=None) -> bool """
         return False
 
-    def isUser(self, QObject_object=None): # real signature unknown; restored from __doc__
+    def isUser(self, obj: QObject=None)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isUser(QObject object=None) -> bool """
         return False
 
-    def isValid(self): # real signature unknown; restored from __doc__
+    def isValid(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isValid() -> bool """
         return False
 
-    def isWritable(self): # real signature unknown; restored from __doc__
+    def isWritable(self)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.isWritable() -> bool """
         return False
 
-    def name(self): # real signature unknown; restored from __doc__
+    def name(self)->str: # real signature unknown; restored from __doc__
         """ QMetaProperty.name() -> str """
         return ""
 
@@ -93,11 +98,11 @@ class QMetaProperty(): # skipped bases: <type 'sip.simplewrapper'>
         """ QMetaProperty.propertyIndex() -> int """
         return 0
 
-    def read(self, QObject): # real signature unknown; restored from __doc__
+    def read(self, obj: QObject)->QVariant: # real signature unknown; restored from __doc__
         """ QMetaProperty.read(QObject) -> QVariant """
         return QVariant
 
-    def reset(self, QObject): # real signature unknown; restored from __doc__
+    def reset(self, obj: QObject)->bool: # real signature unknown; restored from __doc__
         """ QMetaProperty.reset(QObject) -> bool """
         return False
 
@@ -113,11 +118,11 @@ class QMetaProperty(): # skipped bases: <type 'sip.simplewrapper'>
         """ QMetaProperty.userType() -> int """
         return 0
 
-    def write(self, QObject, QVariant): # real signature unknown; restored from __doc__
+    def write(self, obj:QObject, qvariant: QVariant): # real signature unknown; restored from __doc__
         """ QMetaProperty.write(QObject, QVariant) -> bool """
         return False
 
-    def __init__(self, QMetaProperty=None): # real signature unknown; restored from __doc__ with multiple overloads
+    def __init__(self, prop: QMetaProperty=None): # real signature unknown; restored from __doc__ with multiple overloads
         pass
 
     __weakref__ = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default

@@ -6,9 +6,15 @@
 
 # imports
 import PyQt4.QtCore as __PyQt4_QtCore
+from typing import Type, Union, overload
 
-
-from QWidget import QWidget
+from .QWidget import QWidget
+from .QValidator import QValidator
+from .QAbstractItemView import QAbstractItemView
+from .QCompleter import QCompleter
+from .QLineEdit import QLineEdit
+from ..QtCore.QString import QString
+from ..QtCore.pyqtSignal import pyqtSignal
 
 class QComboBox(QWidget):
     """ QComboBox(QWidget parent=None) """
@@ -59,9 +65,9 @@ class QComboBox(QWidget):
     def closeEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def completer(self): # real signature unknown; restored from __doc__
+    def completer(self)->QCompleter: # real signature unknown; restored from __doc__
         """ QComboBox.completer() -> QCompleter """
-        return QCompleter
+        pass
 
     def connectNotify(self, *args, **kwargs): # real signature unknown
         pass
@@ -81,14 +87,16 @@ class QComboBox(QWidget):
         """ QComboBox.currentIndex() -> int """
         return 0
 
-    def currentIndexChanged(self, *args, **kwargs): # real signature unknown
-        """
-        QComboBox.currentIndexChanged[int] [signal]
-        QComboBox.currentIndexChanged[QString] [signal]
-        """
-        pass
+    
+    currentIndexChanged: Type[pyqtSignal] = pyqtSignal
+    # def currentIndexChanged(self, *args, **kwargs): # real signature unknown
+    #     """
+    #     QComboBox.currentIndexChanged[int] [signal]
+    #     QComboBox.currentIndexChanged[QString] [signal]
+    #     """
+    #     pass
 
-    def currentText(self): # real signature unknown; restored from __doc__
+    def currentText(self)->str: # real signature unknown; restored from __doc__
         """ QComboBox.currentText() -> QString """
         pass
 
@@ -131,11 +139,11 @@ class QComboBox(QWidget):
         """ QComboBox.event(QEvent) -> bool """
         return False
 
-    def findData(self, QVariant, int_role=None, Qt_MatchFlags_flags=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def findData(self, QVariant, int_role=None, Qt_MatchFlags_flags=None, *args, **kwargs)->int: # real signature unknown; NOTE: unreliably restored from __doc__ 
         """ QComboBox.findData(QVariant, int role=Qt.UserRole, Qt.MatchFlags flags=Qt.MatchExactly|Qt.MatchCaseSensitive) -> int """
         pass
 
-    def findText(self, QString, Qt_MatchFlags_flags=None, *args, **kwargs): # real signature unknown; NOTE: unreliably restored from __doc__ 
+    def findText(self, QString, Qt_MatchFlags_flags=None, *args, **kwargs)->int: # real signature unknown; NOTE: unreliably restored from __doc__ 
         """ QComboBox.findText(QString, Qt.MatchFlags flags=Qt.MatchExactly|Qt.MatchCaseSensitive) -> int """
         pass
 
@@ -223,13 +231,13 @@ class QComboBox(QWidget):
 
     def itemDelegate(self): # real signature unknown; restored from __doc__
         """ QComboBox.itemDelegate() -> QAbstractItemDelegate """
-        return QAbstractItemDelegate
+        pass
 
     def itemIcon(self, p_int): # real signature unknown; restored from __doc__
         """ QComboBox.itemIcon(int) -> QIcon """
-        return QIcon
+        pass
 
-    def itemText(self, p_int): # real signature unknown; restored from __doc__
+    def itemText(self, p_int)->str:
         """ QComboBox.itemText(int) -> QString """
         pass
 
@@ -247,7 +255,7 @@ class QComboBox(QWidget):
     def leaveEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def lineEdit(self): # real signature unknown; restored from __doc__
+    def lineEdit(self)->QLineEdit: # real signature unknown; restored from __doc__
         """ QComboBox.lineEdit() -> QLineEdit """
         return QLineEdit
 
@@ -447,13 +455,13 @@ class QComboBox(QWidget):
     def updateMicroFocus(self, *args, **kwargs): # real signature unknown
         pass
 
-    def validator(self): # real signature unknown; restored from __doc__
+    def validator(self)->QValidator: # real signature unknown; restored from __doc__
         """ QComboBox.validator() -> QValidator """
-        return QValidator
+        pass
 
-    def view(self): # real signature unknown; restored from __doc__
+    def view(self)->QAbstractItemView: # real signature unknown; restored from __doc__
         """ QComboBox.view() -> QAbstractItemView """
-        return QAbstractItemView
+        pass
 
     def wheelEvent(self, QWheelEvent): # real signature unknown; restored from __doc__
         """ QComboBox.wheelEvent(QWheelEvent) """

@@ -6,7 +6,17 @@
 
 # imports
 import sip as __sip
-
+from .QMetaProperty import QMetaProperty
+from .QMetaMethod import QMetaMethod
+from .QMetaEnum import QMetaEnum
+from .QMetaClassInfo import QMetaClassInfo
+from .QObject import QObject
+from .QGenericArgument import QGenericArgument
+from .QGenericReturnArgument import QGenericReturnArgument
+from .Qt import Qt
+from .QByteArray import QByteArray
+from .QVariant import QVariant
+from .QList import QList
 
 class QMetaObject(): # skipped bases: <type 'sip.simplewrapper'>
     """
@@ -134,7 +144,7 @@ class QMetaObject(): # skipped bases: <type 'sip.simplewrapper'>
         """ QMetaObject.superClass() -> QMetaObject """
         return QMetaObject
 
-    def userProperty(self): # real signature unknown; restored from __doc__
+    def userProperty(self)->QMetaProperty: # real signature unknown; restored from __doc__
         """ QMetaObject.userProperty() -> QMetaProperty """
         return QMetaProperty
 

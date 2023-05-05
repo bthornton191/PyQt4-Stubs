@@ -5,10 +5,12 @@
 # no doc
 
 # imports
+from typing import Type
 import PyQt4.QtCore as __PyQt4_QtCore
 
-
 from QAbstractSpinBox import QAbstractSpinBox
+
+from ..QtCore.pyqtSignal import pyqtSignal
 
 class QSpinBox(QAbstractSpinBox):
     """ QSpinBox(QWidget parent=None) """
@@ -231,12 +233,13 @@ class QSpinBox(QAbstractSpinBox):
         """ QSpinBox.value() -> int """
         return 0
 
-    def valueChanged(self, *args, **kwargs): # real signature unknown
-        """
-        QSpinBox.valueChanged[int] [signal]
-        QSpinBox.valueChanged[QString] [signal]
-        """
-        pass
+    valueChanged: Type[pyqtSignal]
+    # def valueChanged(self, *args, **kwargs): # real signature unknown
+    #     """
+    #     QSpinBox.valueChanged[int] [signal]
+    #     QSpinBox.valueChanged[QString] [signal]
+    #     """
+    #     pass
 
     def valueFromText(self, QString): # real signature unknown; restored from __doc__
         """ QSpinBox.valueFromText(QString) -> int """

@@ -5,10 +5,13 @@
 # no doc
 
 # imports
+from typing import Type
 import PyQt4.QtCore as __PyQt4_QtCore
 
 
 from QWidget import QWidget
+from .QValidator import QValidator
+from ..QtCore import pyqtSignal
 
 class QLineEdit(QWidget):
     """
@@ -146,10 +149,11 @@ class QLineEdit(QWidget):
     def echoMode(self): # real signature unknown; restored from __doc__
         """ QLineEdit.echoMode() -> QLineEdit.EchoMode """
         pass
-
-    def editingFinished(self, *args, **kwargs): # real signature unknown
-        """ QLineEdit.editingFinished [signal] """
-        pass
+    
+    editingFinished: Type[pyqtSignal] = pyqtSignal() # convienence signal
+    # def editingFinished(self, *args, **kwargs): # real signature unknown
+    #     """ QLineEdit.editingFinished [signal] """
+    #     pass
 
     def enabledChange(self, *args, **kwargs): # real signature unknown
         pass
@@ -418,17 +422,19 @@ class QLineEdit(QWidget):
     def tabletEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def text(self): # real signature unknown; restored from __doc__
+    def text(self)->str: # real signature unknown; restored from __doc__
         """ QLineEdit.text() -> QString """
         pass
 
-    def textChanged(self, *args, **kwargs): # real signature unknown
-        """ QLineEdit.textChanged[QString] [signal] """
-        pass
+    textChanged: Type[pyqtSignal]
+    # def textChanged(self, *args, **kwargs): # real signature unknown
+    #     """ QLineEdit.textChanged[QString] [signal] """
+    #     pass
 
-    def textEdited(self, *args, **kwargs): # real signature unknown
-        """ QLineEdit.textEdited[QString] [signal] """
-        pass
+    textEdited: Type[pyqtSignal]
+    # def textEdited(self, *args, **kwargs): # real signature unknown
+    #     """ QLineEdit.textEdited[QString] [signal] """
+    #     pass
 
     def textMargins(self): # real signature unknown; restored from __doc__
         """ QLineEdit.textMargins() -> QMargins """
@@ -444,7 +450,7 @@ class QLineEdit(QWidget):
     def updateMicroFocus(self, *args, **kwargs): # real signature unknown
         pass
 
-    def validator(self): # real signature unknown; restored from __doc__
+    def validator(self)->QValidator: # real signature unknown; restored from __doc__
         """ QLineEdit.validator() -> QValidator """
         return QValidator
 

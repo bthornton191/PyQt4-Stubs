@@ -5,10 +5,14 @@
 # no doc
 
 # imports
-import PyQt4.QtCore as __PyQt4_QtCore
+from typing import Type, overload
 
 
-from QTableView import QTableView
+from .QTableView import QTableView
+from .QTableWidgetItem import QTableWidgetItem
+from ..QtCore.QPoint import QPoint
+from ..QtCore.pyqtSignal import pyqtSignal
+from .QWidget import QWidget
 
 class QTableWidget(QTableView):
     """
@@ -18,31 +22,37 @@ class QTableWidget(QTableView):
     def actionEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def cellActivated(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellActivated[int, int] [signal] """
-        pass
+        cellActivated: Type[pyqtSignal]
+    # def cellActivated(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellActivated[int, int] [signal] """
+    #     pass
 
-    def cellChanged(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellChanged[int, int] [signal] """
-        pass
+    cellChanged: Type[pyqtSignal]
+    # def cellChanged(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellChanged[int, int] [signal] """
+    #     pass
 
-    def cellClicked(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellClicked[int, int] [signal] """
-        pass
+    cellClicked: Type[pyqtSignal]
+    # def cellClicked(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellClicked[int, int] [signal] """
+    #     pass
 
-    def cellDoubleClicked(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellDoubleClicked[int, int] [signal] """
-        pass
+    cellDoubleClicked: Type[pyqtSignal]
+    # def cellDoubleClicked(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellDoubleClicked[int, int] [signal] """
+    #     pass
 
-    def cellEntered(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellEntered[int, int] [signal] """
-        pass
+    cellEntered: Type[pyqtSignal]
+    # def cellEntered(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellEntered[int, int] [signal] """
+    #     pass
 
-    def cellPressed(self, *args, **kwargs): # real signature unknown
-        """ QTableWidget.cellPressed[int, int] [signal] """
-        pass
+    cellPressed: Type[pyqtSignal]
+    # def cellPressed(self, *args, **kwargs): # real signature unknown
+    #     """ QTableWidget.cellPressed[int, int] [signal] """
+    #     pass
 
-    def cellWidget(self, p_int, p_int_1): # real signature unknown; restored from __doc__
+    def cellWidget(self, row: int, col: int)->QWidget: # real signature unknown; restored from __doc__
         """ QTableWidget.cellWidget(int, int) -> QWidget """
         return QWidget
 
@@ -242,7 +252,7 @@ class QTableWidget(QTableView):
     def isIndexHidden(self, *args, **kwargs): # real signature unknown
         pass
 
-    def isItemSelected(self, QTableWidgetItem): # real signature unknown; restored from __doc__
+    def isItemSelected(self, item: QTableWidgetItem)->bool: # real signature unknown; restored from __doc__
         """ QTableWidget.isItemSelected(QTableWidgetItem) -> bool """
         return False
 
@@ -250,12 +260,24 @@ class QTableWidget(QTableView):
         """ QTableWidget.isSortingEnabled() -> bool """
         return False
 
-    def item(self, p_int, p_int_1): # real signature unknown; restored from __doc__
+    def item(self, row: int, col: int)->QTableWidgetItem: # real signature unknown; restored from __doc__
         """ QTableWidget.item(int, int) -> QTableWidgetItem """
         return QTableWidgetItem
 
     def itemActivated(self, *args, **kwargs): # real signature unknown
         """ QTableWidget.itemActivated[QTableWidgetItem] [signal] """
+        pass
+
+    @overload
+    def itemAt(self, point: QPoint)->QTableWidgetItem:
+        """QTableWidget.itemAt(QPoint) -> QTableWidgetItem
+        """
+        pass
+    
+    @overload
+    def itemAt(self, row: int, col: int)->QTableWidgetItem:
+        """QTableWidget.itemAt(int, int) -> QTableWidgetItem
+        """
         pass
 
     def itemAt(self, *__args): # real signature unknown; restored from __doc__ with multiple overloads

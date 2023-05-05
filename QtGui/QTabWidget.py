@@ -9,6 +9,8 @@ import PyQt4.QtCore as __PyQt4_QtCore
 
 
 from QWidget import QWidget
+from .QTabBar import QTabBar
+from .QIcon import QIcon
 
 class QTabWidget(QWidget):
     """ QTabWidget(QWidget parent=None) """

@@ -5,8 +5,11 @@
 # no doc
 
 # imports
+from typing import Type
 import PyQt4.QtCore as __PyQt4_QtCore
 
+from ..QtCore.pyqtSignal import pyqtSignal
+from .QActionGroup import QActionGroup
 
 class QAction(__PyQt4_QtCore.QObject):
     """
@@ -272,13 +275,14 @@ class QAction(__PyQt4_QtCore.QObject):
     def trigger(self): # real signature unknown; restored from __doc__
         """ QAction.trigger() """
         pass
-
-    def triggered(self, *args, **kwargs): # real signature unknown
-        """
-        QAction.triggered[bool] [signal]
-        QAction.triggered [signal]
-        """
-        pass
+    
+    triggered: Type[pyqtSignal] = pyqtSignal() 
+    # def triggered(self, *args, **kwargs): # real signature unknown
+    #     """
+    #     QAction.triggered[bool] [signal]
+    #     QAction.triggered [signal]
+    #     """
+    #     pass
 
     def whatsThis(self): # real signature unknown; restored from __doc__
         """ QAction.whatsThis() -> QString """

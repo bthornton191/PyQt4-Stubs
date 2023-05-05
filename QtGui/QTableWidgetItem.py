@@ -6,7 +6,11 @@
 
 # imports
 import PyQt4.QtCore as __PyQt4_QtCore
-
+from .QBrush import QBrush
+from .QColor import QColor
+from .QFont import QFont
+from .QIcon import QIcon
+from .QTableWidget import QTableWidget
 
 class QTableWidgetItem(): # skipped bases: <type 'sip.wrapper'>
     """
@@ -143,7 +147,7 @@ class QTableWidgetItem(): # skipped bases: <type 'sip.wrapper'>
         """ QTableWidgetItem.tableWidget() -> QTableWidget """
         return QTableWidget
 
-    def text(self): # real signature unknown; restored from __doc__
+    def text(self)->str: # real signature unknown; restored from __doc__
         """ QTableWidgetItem.text() -> QString """
         pass
 

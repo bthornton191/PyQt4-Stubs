@@ -9,6 +9,8 @@ import PyQt4.QtCore as __PyQt4_QtCore
 
 
 from QFrame import QFrame
+from .QScrollBar import QScrollBar
+from .QWidget import QWidget
 
 class QAbstractScrollArea(QFrame):
     """ QAbstractScrollArea(QWidget parent=None) """

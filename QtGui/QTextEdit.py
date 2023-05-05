@@ -534,7 +534,7 @@ class QTextEdit(QAbstractScrollArea):
         """ QTextEdit.toHtml() -> QString """
         pass
 
-    def toPlainText(self): # real signature unknown; restored from __doc__
+    def toPlainText(self)->str: # real signature unknown; restored from __doc__
         """ QTextEdit.toPlainText() -> QString """
         pass
 

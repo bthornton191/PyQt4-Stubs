@@ -324,7 +324,7 @@ from QProxyModel import QProxyModel
 from QTextObjectInterface import QTextObjectInterface
 from QPyTextObject import QPyTextObject
 from QQuaternion import QQuaternion
-from QRadialGradient import QRadialGradient
+from QLinearGradient import QLinearGradient
 from QRadioButton import QRadioButton
 from QRawFont import QRawFont
 from QRegExpValidator import QRegExpValidator

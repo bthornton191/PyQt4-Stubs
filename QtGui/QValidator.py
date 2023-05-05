@@ -5,8 +5,10 @@
 # no doc
 
 # imports
+from typing import Tuple
 import PyQt4.QtCore as __PyQt4_QtCore
 
+from ..QtCore.QObject import QObject
 
 class QValidator(__PyQt4_QtCore.QObject):
     """ QValidator(QObject parent=None) """
@@ -46,11 +48,11 @@ class QValidator(__PyQt4_QtCore.QObject):
     def timerEvent(self, *args, **kwargs): # real signature unknown
         pass
 
-    def validate(self, QString, p_int): # real signature unknown; restored from __doc__
+    def validate(self, s: str, pos: int)->Tuple[int, int]: # real signature unknown; restored from __doc__
         """ QValidator.validate(QString, int) -> (QValidator.State, int) """
         pass
 
-    def __init__(self, QObject_parent=None): # real signature unknown; restored from __doc__
+    def __init__(self, parent: QObject=None): # real signature unknown; restored from __doc__
         pass
 
     Acceptable = 2

@@ -5,10 +5,13 @@
 # no doc
 
 # imports
+from typing import Type
 import PyQt4.QtCore as __PyQt4_QtCore
 
 
-from QWidget import QWidget
+from .QWidget import QWidget
+from ..QtCore.pyqtSignal import pyqtSignal
+from .QKeySequence import QKeySequence
 
 class QAbstractButton(QWidget):
     """ QAbstractButton(QWidget parent=None) """
@@ -50,12 +53,13 @@ class QAbstractButton(QWidget):
         """ QAbstractButton.click() """
         pass
 
-    def clicked(self, *args, **kwargs): # real signature unknown
-        """
-        QAbstractButton.clicked[bool] [signal]
-        QAbstractButton.clicked [signal]
-        """
-        pass
+    clicked: Type[pyqtSignal] = pyqtSignal
+    # def clicked(self, *args, **kwargs): # real signature unknown
+    #     """
+    #     QAbstractButton.clicked[bool] [signal]
+    #     QAbstractButton.clicked [signal]
+    #     """
+    #     pass
 
     def closeEvent(self, *args, **kwargs): # real signature unknown
         pass
@@ -267,7 +271,7 @@ class QAbstractButton(QWidget):
         """ QAbstractButton.setText(QString) """
         pass
 
-    def shortcut(self): # real signature unknown; restored from __doc__
+    def shortcut(self)->QKeySequence: # real signature unknown; restored from __doc__
         """ QAbstractButton.shortcut() -> QKeySequence """
         return QKeySequence
 
@@ -289,9 +293,10 @@ class QAbstractButton(QWidget):
         """ QAbstractButton.toggle() """
         pass
 
-    def toggled(self, *args, **kwargs): # real signature unknown
-        """ QAbstractButton.toggled[bool] [signal] """
-        pass
+    toggled: Type[pyqtSignal]
+    # def toggled(self, *args, **kwargs): # real signature unknown
+    #     """ QAbstractButton.toggled[bool] [signal] """
+    #     pass
 
     def updateMicroFocus(self, *args, **kwargs): # real signature unknown
         pass

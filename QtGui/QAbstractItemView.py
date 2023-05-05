@@ -5,10 +5,11 @@
 # no doc
 
 # imports
-import PyQt4.QtCore as __PyQt4_QtCore
 
 
-from QAbstractScrollArea import QAbstractScrollArea
+from .QAbstractScrollArea import QAbstractScrollArea
+from .QItemSelectionModel import QItemSelectionModel
+from ..QtCore.QAbstractItemModel import QAbstractItemModel
 
 class QAbstractItemView(QAbstractScrollArea):
     """ QAbstractItemView(QWidget parent=None) """
@@ -273,7 +274,7 @@ class QAbstractItemView(QAbstractScrollArea):
     def metric(self, *args, **kwargs): # real signature unknown
         pass
 
-    def model(self): # real signature unknown; restored from __doc__
+    def model(self)->QAbstractItemModel: # real signature unknown; restored from __doc__
         """ QAbstractItemView.model() -> QAbstractItemModel """
         pass
 
@@ -387,7 +388,7 @@ class QAbstractItemView(QAbstractScrollArea):
         """ QAbstractItemView.selectionMode() -> QAbstractItemView.SelectionMode """
         pass
 
-    def selectionModel(self): # real signature unknown; restored from __doc__
+    def selectionModel(self)->QItemSelectionModel: # real signature unknown; restored from __doc__
         """ QAbstractItemView.selectionModel() -> QItemSelectionModel """
         return QItemSelectionModel
 

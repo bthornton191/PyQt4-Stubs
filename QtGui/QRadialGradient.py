@@ -10,7 +10,7 @@ import PyQt4.QtCore as __PyQt4_QtCore
 
 from QGradient import QGradient
 
-class QRadialGradient(QGradient):
+class QLinearGradient(QGradient):
     """
     QRadialGradient()
     QRadialGradient(QPointF, float, QPointF)
